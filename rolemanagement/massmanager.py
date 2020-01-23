@@ -295,7 +295,7 @@ class MassManagementMixin(MixinMeta):
         --add roles
         --remove roles
         """
-        query = cast(dict, query)  # type: ignore
+        query = cast(dict, query)
         apply = query["add"] + query["remove"]
         if not await self.all_are_valid_roles(ctx, *apply):
             return await ctx.send(
